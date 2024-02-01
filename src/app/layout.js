@@ -20,6 +20,9 @@ export default function RootLayout({ children }) {
       <body className="flex flex-col p-4 lg:p-0 lg:flex-row lg:overflow-hidden justify-center bg-gray-100 lg:h-[100vh] gap-5 lg:gap-7">
         {/* ---------- Mobile Navbar ---------- */}
         <div className="lg:hidden flex items-center justify-between">
+          <div>
+            <Navbar />
+          </div>
           <h1 className="font-poppins text-[18px] text-[#393939]">Dua Page</h1>
           <div className="">
             <MobileSettings />
