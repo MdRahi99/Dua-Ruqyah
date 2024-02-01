@@ -5,7 +5,6 @@ import Category from "./components/Category/Category";
 import Settings from "./components/Settings/Settings";
 import Search from "./components/Search/Search";
 import Profile from "./components/Profile/Profile";
-import MobileSettings from "./components/Settings/MobileSettings";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +24,7 @@ export default function RootLayout({ children }) {
           </div>
           <h1 className="font-poppins text-[18px] text-[#393939]">Dua Page</h1>
           <div className="">
-            <MobileSettings />
+            <Settings />
           </div>
         </div>
 
