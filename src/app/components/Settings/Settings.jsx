@@ -55,6 +55,7 @@ const Settings = () => {
                                     alt="mode"
                                     width={30}
                                     height={16} />
+                                {/* <input type="checkbox" className="toggle toggle-info rounded-3xl h-4 w-10" /> */}
                             </div>
                         </div>
                     </ul>
