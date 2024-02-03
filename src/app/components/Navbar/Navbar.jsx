@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className="drawer lg:drawer-open h-full flex flex-col items-center">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                    <label htmlFor="my-drawer-2" className="text-2xl text-green-600 lg:hidden"><RiDashboardFill /></label>
+                    <label htmlFor="my-drawer-2" className="text-4xl text-green-600 lg:hidden"><RiDashboardFill /></label>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
