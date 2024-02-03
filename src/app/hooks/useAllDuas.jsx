@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useCategories = () => {
+const useAllDuas = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [categories, setCategories] = useState(null);
+    const [allDuas, setAllDuas] = useState(null);
 
     useEffect(() => {
-        const fetchCategories = async () => {
+        const fetchAllDuas = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:5000/duas/categories');
-                setCategories(response.data);
+                const response = await axios.get('http://localhost:5000/duas');
+                setAllDuas(response.data);
             } catch (error) {
                 setError(error);
             } finally {
@@ -19,10 +19,10 @@ const useCategories = () => {
             }
         };
 
-        fetchCategories();
+        fetchAllDuas();
     }, []);
 
-    return [ categories, loading, error ];
+    return [ allDuas, loading, error ];
 };
 
-export default useCategories;
+export default useAllDuas;

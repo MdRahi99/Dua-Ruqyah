@@ -1,15 +1,15 @@
 'use client'
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import search from "../../assets/searchVector.png"
 import useCategories from "@/app/hooks/useCategories";
 import CategoryList from "./CategoryList";
+import Loader from "../Loader/Loader";
 
 const Category = () => {
 
-    const { categories, loading, error } = useCategories();
+    const [categories, loading, error] = useCategories();
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loader />;
     if (error) return <p>Error: {error}</p>;
     if (!categories) return null;
 
@@ -32,7 +32,8 @@ const Category = () => {
             <div className="lg:h-[66vh] overflow-y-auto">
                 {
                     categories?.map(category => {
-                        return <CategoryList key={category._id} category={category} />
+                        return <CategoryList key={category._id}
+                            category={category} />
                     })
                 }
             </div>

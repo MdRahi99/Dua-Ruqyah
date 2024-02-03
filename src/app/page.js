@@ -1,8 +1,8 @@
-import Contents from "./contents/page";
+import Contents from "./duas/page";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="">
       <Contents />
     </main>
   );

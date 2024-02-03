@@ -1,15 +1,15 @@
 import Image from "next/image";
 import img from "../../assets/test.png";
+import DuaList from "./DuaList";
 import Link from "next/link";
-import { MdKeyboardArrowRight } from "@react-icons/all-files/md/MdKeyboardArrowRight";
 
 const CategoryList = ({ category }) => {
-    const { cat_name_en, no_of_subcat, no_of_dua, subCategories } = category;
+    const { cat_id, cat_name_en, no_of_subcat, no_of_dua, subCategories } = category;
 
     return (
-        <div className="collapse">
+        <div key={category._id} className="collapse">
             <input type="radio" name="my-accordion-1" checked="checked" />
-            <div className="flex collapse-title items-center justify-between p-3 rounded-lg hover:bg-[#E8F0F5] w-11/12 mx-auto">
+            <div className="flex items-center collapse-title justify-between p-3 rounded-lg hover:bg-[#E8F0F5] w-11/12 mx-auto">
                 <div className="flex w-11/12 items-center gap-3">
                     <Image
                         className="bg-[#CFE0E5] p-1 rounded-lg"
@@ -33,34 +33,14 @@ const CategoryList = ({ category }) => {
                     <h1 className="flex flex-col items-center"><span className="text-black font-medium">{no_of_dua}</span> Duas</h1>
                 </div>
             </div>
-            {subCategories.map(subCategory => (
-                <div key={subCategory.id} className="collapse">
-                    <input type="radio" name={`my-accordion-2-${subCategory.id}`} />
-                    <div className="flex collapse-title items-center justify-between p-3 rounded-lg hover:bg-[#E8F0F5] w-11/12 mx-auto">
-                        <div className="flex w-11/12 items-center gap-3">
-                            <div className="border-l-2 border-green-600 border-dotted h-9 ml-6 p-2 relative">
-                                <span className="absolute top-2 left-[-6px] transform -translate-y-1/2 font-extrabold text-[#1FA45B] text-3xl">.</span>
-                            </div>
-                            <h1 className="font-medium text-black hover:text-[#1FA45B] text-sm w-full">
-                                {subCategory.subcat_name_en}
-                            </h1>
-                        </div>
-                    </div>
-                    
-                    <div className="collapse-content flex flex-col w-full mx-auto">
-                        {subCategory.duas.map(dua => (
-                            <Link href='/' key={dua.id} className="flex items-center">
-                                <div className="ml-10 p-1">
-                                    <MdKeyboardArrowRight className="text-xl font-bold text-green-600" />
-                                </div>
-                                <h1 className="font-normal text-black hover:text-[#1FA45B] py-2 text-sm w-full">
-                                    {dua.dua_name_en}
-                                </h1>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            ))}
+            <div className="collapse-content">
+                {subCategories.map(subCategory => (
+                    <DuaList key={subCategory._id}
+                        subCategory={subCategory}
+                        cat_name_en={cat_name_en}
+                        cat_id={cat_id} />
+                ))}
+            </div>
         </div>
     );
 };
