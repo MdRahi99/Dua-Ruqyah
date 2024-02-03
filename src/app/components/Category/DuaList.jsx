@@ -8,7 +8,7 @@ const DuaList = ({ subCategory, cat_name_en, cat_id }) => {
     return (
         <>
             <div className="collapse">
-                <input type="radio" name="my-accordion-2" checked="checked" />
+                <input type="radio" name="my-accordion-2" />
                 <div className="flex items-center justify-between collapse-title p-3 rounded-lg hover:bg-[#E8F0F5]">
                     <div className="flex w-full items-center gap-3">
                         <div className="border-l-2 border-green-600 border-dotted h-9 ml-3 relative">

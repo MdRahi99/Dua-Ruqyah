@@ -13,7 +13,7 @@ const useDuas = (id, query) => {
 
         const fetchDuas = async (cat_Id, subcat_Id, dua_Id) => {
             try {
-                let url = `http://localhost:5000/duas/${id}?cat=${cat_Id}`;
+                let url = `https://dua-ruqyah-server.vercel.app/duas/${id}?cat=${cat_Id}`;
                 if (subcat_Id !== null) {
                     url += `&subcat=${subcat_Id}`;
                 }

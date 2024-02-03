@@ -10,7 +10,7 @@ const useAllDuas = () => {
         const fetchAllDuas = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:5000/duas');
+                const response = await axios.get('https://dua-ruqyah-server.vercel.app/duas');
                 setAllDuas(response.data);
             } catch (error) {
                 setError(error);

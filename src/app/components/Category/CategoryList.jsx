@@ -8,7 +8,7 @@ const CategoryList = ({ category }) => {
 
     return (
         <div key={category._id} className="collapse">
-            <input type="radio" name="my-accordion-1" checked="checked" />
+            <input type="radio" name="my-accordion-1" />
             <div className="flex items-center collapse-title justify-between p-3 rounded-lg hover:bg-[#E8F0F5] w-11/12 mx-auto">
                 <div className="flex w-11/12 items-center gap-3">
                     <Image

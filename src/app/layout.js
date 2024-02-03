@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           <div className="h-[6vh] hidden lg:flex justify-end">
             <Search />
           </div>
-          <div className="lg:h-[86vh] overflow-y-auto rounded-lg lg:rounded-xl bg-white">
+          <div className="lg:h-fit overflow-y-auto rounded-lg lg:rounded-xl bg-white">
             {children}
           </div>
         </div>

@@ -15,7 +15,7 @@ const Duas = ({ params }) => {
             {loading ?
                 <Loader />
                 :
-                <div>
+                <div className='grid grid-cols-1 gap-3'>
                     {duas.map(dua => {
                         return <DuaDetails key={dua._id} dua={dua} />
                     })}

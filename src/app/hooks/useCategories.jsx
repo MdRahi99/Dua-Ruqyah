@@ -10,7 +10,7 @@ const useCategories = () => {
         const fetchCategories = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:5000/duas/categories');
+                const response = await axios.get('https://dua-ruqyah-server.vercel.app/duas/categories');
                 setCategories(response.data);
             } catch (error) {
                 setError(error);

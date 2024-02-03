@@ -12,7 +12,7 @@ const Contents = () => {
             {loading ?
                 <Loader />
                 :
-                <div>
+                <div className="grid grid-cols-1 gap-5 bg-gray-100">
                     {allDuas.map(duas => {
                         return <DuaDetails key={duas._id} dua={duas} />
                     })}
